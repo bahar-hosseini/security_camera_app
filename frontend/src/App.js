@@ -13,7 +13,7 @@ const App = () => {
       <main>
         <Container className="p-0" fluid>
           <Routes>
-          <Route path="/" element={<HomeScreen />} />
+          <Route path="/" element={<HomeScreen />} exact/>
           </Routes>
         </Container>
       </main>
