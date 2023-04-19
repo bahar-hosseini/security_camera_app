@@ -1,5 +1,6 @@
-//Inner Modules
+//Internal Modules
 import Header from "./components/Header";
+import HomeScreen from "./screen/HomeScreen";
 
 const App = () => {
   return (
@@ -8,7 +9,7 @@ const App = () => {
         <Header />
       </header>
       <main>
-        <h1>Welcome to Bolt and Dash</h1>
+        <HomeScreen />
       </main>
     </>
   );
