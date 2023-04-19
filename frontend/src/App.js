@@ -1,9 +1,15 @@
+//Inner Modules
+import Header from "./components/Header";
+
 const App = () => {
   return (
     <>
-    <main>
-      <h1>Welcome to Bolt and Dash</h1>
-    </main>
+      <header>
+        <Header />
+      </header>
+      <main>
+        <h1>Welcome to Bolt and Dash</h1>
+      </main>
     </>
   );
 };
