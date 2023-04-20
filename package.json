@@ -1,0 +1,35 @@
+{
+  "name": "bolt_and_dash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node backend/seeder.js",
+    "data:destroy": "node backend/seeder.js -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahar-hosseini/security_camera_app.git"
+  },
+  "author": "Bahar Hosseini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bahar-hosseini/security_camera_app/issues"
+  },
+  "homepage": "https://github.com/bahar-hosseini/security_camera_app#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.4"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "nodemon": "^2.0.22"
+  }
+}
