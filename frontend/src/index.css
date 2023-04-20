@@ -11,3 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.bg_home{
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+
+.btn-custom {
+background-color: #DDB34B;
+color: #000;
+border: none;
+box-shadow: 0 0 8px rgb(207, 207, 207);
+}
+
+.btn-custom:hover{
+  background-color:#dc9612;
+  color: #000;
+  border: none;
+  transition: 0.75s;
+}
+
+.card_login{
+  width: 35vw;
+  height: auto;
+  background: rgba(132, 131, 131, 0.5);
+  backdrop-filter: blur(5px);
+}
