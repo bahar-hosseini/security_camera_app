@@ -8,6 +8,7 @@ export const useLoginContext = () => useContext(LoginContext);
 export const LoginProvider = ({ children }) => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [error, setError] = useState(false);
 
   const login = (email, password) => {
     axios
@@ -20,6 +21,7 @@ export const LoginProvider = ({ children }) => {
       })
       .catch((error) => {
         console.error(error);
+        setError();
       });
   };
 
@@ -28,7 +30,7 @@ export const LoginProvider = ({ children }) => {
     navigate("/");
   };
 
-  const value = { isLoggedIn, login, logout };
+  const value = { isLoggedIn, login, logout, error };
   return (
     <LoginContext.Provider value={value}>{children}</LoginContext.Provider>
   );

@@ -1,6 +1,14 @@
 //External Modules
 import { useState } from "react";
-import { Card, Container, Row, Col, Form, Button } from "react-bootstrap";
+import {
+  Card,
+  Container,
+  Row,
+  Col,
+  Form,
+  Button,
+  Alert,
+} from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 //Internal Modules
@@ -13,7 +21,7 @@ const HomeScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { isLoggedIn, login } = useLoginContext();
+  const { isLoggedIn, login, error } = useLoginContext();
 
   const submitHandler = async (e) => {
     try {
@@ -30,6 +38,7 @@ const HomeScreen = () => {
       className="bg_home d-flex align-items-center justify-content-center"
       style={{ backgroundImage: `url(${headerImage})` }}
     >
+      {error && <Alert variant="danger">{error}</Alert>}
       {!isLoggedIn && (
         <Card className="p-5 card_login">
           <Form onSubmit={submitHandler}>
