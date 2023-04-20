@@ -1,9 +1,8 @@
 //External Modules
-import asyncHandler from 'express-async-handler';
+import asyncHandler from "express-async-handler";
 
 //Internal Modules
-import User from '../models/userModel.js';
-
+import User from "../models/userModel.js";
 
 // @desc    Auth user & get token
 // @route   POST /api/users/login
@@ -18,14 +17,11 @@ const authUser = asyncHandler(async (req, res) => {
       name: user.name,
       email: user.email,
       isAdimn: user.isAdimn,
-     
     });
   } else {
     res.status(401);
-    throw new Error('Invalid email or password');
+    throw new Error("Invalid email or password");
   }
 });
 
-
-
-export { authUser};
+export { authUser };

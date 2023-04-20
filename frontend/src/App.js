@@ -1,5 +1,5 @@
 //External Modules
-import { BrowserRouter as Router, Route,Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Container } from "react-bootstrap";
 
 //Internal Modules
@@ -13,7 +13,7 @@ const App = () => {
       <main>
         <Container className="p-0" fluid>
           <Routes>
-          <Route path="/" element={<HomeScreen />} />
+            <Route path="/" element={<HomeScreen />} />
           </Routes>
         </Container>
       </main>
