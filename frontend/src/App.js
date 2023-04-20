@@ -5,18 +5,23 @@ import { Container } from "react-bootstrap";
 //Internal Modules
 import Header from "./components/Header";
 import HomeScreen from "./screen/HomeScreen";
+import { LoginProvider } from "./providers/LoginProvider";
+import VideosScreen from "./screen/VideosScreen";
 
 const App = () => {
   return (
     <Router>
-      <Header />
-      <main>
-        <Container className="p-0" fluid>
-          <Routes>
-            <Route path="/" element={<HomeScreen />} />
-          </Routes>
-        </Container>
-      </main>
+      <LoginProvider>
+        <Header />
+        <main>
+          <Container className="p-0" fluid>
+            <Routes>
+              <Route path="/videos" element={<VideosScreen />} />
+              <Route path="/" element={<HomeScreen />} exact />
+            </Routes>
+          </Container>
+        </main>
+      </LoginProvider>
     </Router>
   );
 };
