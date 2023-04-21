@@ -20,13 +20,14 @@ const videos = [
     videoUrl: convertS3UrlToNormalUrl(
       "s3://videos-bolt-and-dash/camera1_02.mp4"
     ),
- 
+    isLive:false
   },
   {
     title: "Camera 1",
     room: 2,
     camera:1,
     videoUrl:"https://videos-bolt-and-dash.s3.us-east-2.amazonaws.com/camera2_01.mp4",
+    isLive: true
   },
 
   {
@@ -34,12 +35,14 @@ const videos = [
     room: 2,
     camera: 2,
     videoUrl: "https://videos-bolt-and-dash.s3.us-east-2.amazonaws.com/camera2_02.mp4",
+    isLive:false
   },
   {
     title: "Camera 3",
     room: 2,
     camera:2,
-    videoUrl: "https://videos-bolt-and-dash.s3.us-east-2.amazonaws.com/camera2_03.mp4"
+    videoUrl: "https://videos-bolt-and-dash.s3.us-east-2.amazonaws.com/camera2_03.mp4",
+    isLive:false
   },
 
   {
@@ -54,12 +57,14 @@ const videos = [
     room: 3,
     camera:1,
     videoUrl: "https://videos-bolt-and-dash.s3.us-east-2.amazonaws.com/camera3_02.mp4",
+    isLive:false
   },
   {
     title: "Camera 2",
     room: 3,
     camera:2,
     videoUrl: "https://videos-bolt-and-dash.s3.us-east-2.amazonaws.com/camera3_03.mp4",
+    isLive:false
   },
   {
     title: "Camera 2",
@@ -73,9 +78,10 @@ const videos = [
     room: 4,
     camera:2,
     videoUrl: "https://videos-bolt-and-dash.s3.us-east-2.amazonaws.com/camera4_02.mp4",
+    isLive:false
   
   },
 ];
 
 
-export default users;
+export default videos;

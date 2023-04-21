@@ -6,6 +6,8 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import User from "./models/userModel.js";
 import users from "./data/users.js";
+import Video from "./models/videosModel.js";
+import videos from './data/videos.js'
 
 dotenv.config();
 connectDB();
@@ -13,7 +15,9 @@ connectDB();
 const importData = async () => {
   try {
     await User.deleteMany();
+    await Video.deleteMany();
     const createdUser = await User.insertMany(users);
+    const createdVideo = await Video.insertMany(videos);
     const adminUser = createdUser[0]._id;
 
     console.log("Data imported successfully");
@@ -27,6 +31,7 @@ const importData = async () => {
 const destroyData = async () => {
   try {
     await User.deleteMany();
+    await Video.deleteMany();
     console.log("Data Destroyed!");
     process.exit();
   } catch (error) {

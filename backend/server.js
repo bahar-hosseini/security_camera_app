@@ -6,6 +6,7 @@ dotenv.config();
 
 //Internal Modules
 import userRoutes from "./routes/userRouter.js";
+import videoRoutes from "./routes/videoRouter.js";
 
 connectDB();
 
@@ -17,6 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/users", userRoutes);
+app.use("/api/videos", videoRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
