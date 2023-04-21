@@ -8,7 +8,7 @@ export const useLoginContext = () => useContext(LoginContext);
 export const LoginProvider = ({ children }) => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [error, setError] = useState(false);
+  const [isError, setIsError] = useState("");
 
   const login = (email, password) => {
     axios
@@ -18,10 +18,10 @@ export const LoginProvider = ({ children }) => {
       })
       .then((response) => {
         setIsLoggedIn(true);
+        navigate("/videos");
       })
       .catch((error) => {
-        console.error(error);
-        setError();
+        setIsError(error);
       });
   };
 
@@ -30,7 +30,7 @@ export const LoginProvider = ({ children }) => {
     navigate("/");
   };
 
-  const value = { isLoggedIn, login, logout, error };
+  const value = { isLoggedIn, login, logout, isError };
   return (
     <LoginContext.Provider value={value}>{children}</LoginContext.Provider>
   );
