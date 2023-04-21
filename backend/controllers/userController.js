@@ -10,7 +10,7 @@ import User from "../models/userModel.js";
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
-  const user = await User.findOne({ email });
+  const user = await User.findOne({ email: { $regex: email, $options: 'i' } });
   if (user && (await user.matchPassword(password))) {
     res.json({
       id: user._id,
