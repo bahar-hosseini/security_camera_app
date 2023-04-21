@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 
-
 const videoSchema = mongoose.Schema(
   {
     title: {
@@ -8,8 +7,8 @@ const videoSchema = mongoose.Schema(
       required: true,
     },
     room: {
-     type:Number,
-     required: true,
+      type: Number,
+      required: true,
     },
     videoUrl: {
       type: String,
@@ -20,7 +19,6 @@ const videoSchema = mongoose.Schema(
     timestamps: true,
   }
 );
-
 
 const Video = mongoose.model("Video", videoSchema);
 
