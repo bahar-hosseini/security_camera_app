@@ -10,10 +10,16 @@ const videoSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
+    camera: {
+      type: Number,
+      required: true,
+    },
     videoUrl: {
       type: String,
       required: true,
-    },
+    },isLive:{
+      type: Boolean,
+    }
   },
   {
     timestamps: true,
