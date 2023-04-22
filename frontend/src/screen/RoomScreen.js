@@ -1,8 +1,9 @@
 import React, { useState,useEffect } from "react";
 import useFetch from "../useFetch";
-import { Container } from "react-bootstrap";
+import {  Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
+//Internal Modules
 import Loader from "../components/Loader";
 import OffCanvas from "../components/OffCanvasBST";
 import VideoContainer from "../components/VideoContainer";
@@ -11,9 +12,11 @@ const RoomScreen = () => {
   const params = useParams();
   const id = params["*"];
 
-  const { data: videos, isPending, error } = useFetch(`/api/videos/room/${id}`);
+  const { data: videos, isPending} = useFetch(`/api/videos/room/${id}`);
 
   const [play, setPlay] = useState();
+
+
   
   const liveVideo = videos.find(video => video && video.isLive);
   useEffect(() => {
@@ -25,12 +28,14 @@ const RoomScreen = () => {
 
   return (
     <Container>
+ 
       <Container className="d-flexjustify-content-end m-6">
         <OffCanvas
           name="History"
           placement="end"
           videoList={videos}
           setPlay={setPlay}
+          
         />
       </Container>
       <Container className=" d-flex align-items-center justify-content-center">
