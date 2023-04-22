@@ -32,8 +32,3 @@ const extractBucketNameAndObjectKeyFromS3Url = (s3Url) => {
 };
 
 export { convertS3UrlToNormalUrl };
-
-console.log(
-  "____________",
-  convertS3UrlToNormalUrl("s3://videos-bolt-and-dash/camera2_01.mov")
-);

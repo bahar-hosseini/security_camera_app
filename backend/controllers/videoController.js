@@ -9,6 +9,7 @@ import Video from "../models/videosModel.js";
 // @access  Private
 const liveVideo = asyncHandler(async (req, res) => {
   const videos = await Video.find({ isLive: true });
+
   if (videos) {
     res.json(videos);
   } else {
@@ -22,6 +23,7 @@ const liveVideo = asyncHandler(async (req, res) => {
 // @access  Private
 const roomVideo = asyncHandler(async (req, res) => {
   const { id } = req.params;
+
   const videos = await Video.find({ room: id });
   if (videos) {
     res.json(videos);

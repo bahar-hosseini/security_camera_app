@@ -30,9 +30,10 @@ code {
 }
 
 .btn-custom:hover {
-  background-color: #e44e24;
+  background-color: #ef594f;
   color: #000;
   border: none;
+  cursor: pointer;
   transition: 0.5s;
 }
 

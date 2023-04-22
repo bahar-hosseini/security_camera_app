@@ -7,6 +7,7 @@ dotenv.config();
 //Internal Modules
 import userRoutes from "./routes/userRouter.js";
 import videoRoutes from "./routes/videoRouter.js";
+import { protect } from "./middleware/authMiddleware.js";
 
 connectDB();
 
@@ -18,7 +19,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/users", userRoutes);
-app.use("/api/videos", videoRoutes);
+app.use("/api/videos", videoRoutes).get(protect);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
