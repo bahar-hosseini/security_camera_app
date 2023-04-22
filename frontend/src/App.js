@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import HomeScreen from "./screen/HomeScreen";
 import { LoginProvider } from "./providers/LoginProvider";
 import VideosScreen from "./screen/VideosScreen";
+import RoomScreen from "./screen/RoomScreen";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Container className="p-0" fluid>
             <Routes>
               <Route path="/videos" element={<VideosScreen />} />
+              <Route path={`/videos/room/*`} element={<RoomScreen />} />
               <Route path="/" element={<HomeScreen />} exact />
             </Routes>
           </Container>

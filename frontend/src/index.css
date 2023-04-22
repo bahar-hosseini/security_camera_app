@@ -26,14 +26,14 @@ code {
   background-color: #ddb34b;
   color: #000;
   border: none;
-  box-shadow: 0 0 8px rgb(207, 207, 207);
+  box-shadow: 0 0 8px rgb(231, 221, 207);
 }
 
 .btn-custom:hover {
-  background-color: #dc9612;
+  background-color: #e44e24;
   color: #000;
   border: none;
-  transition: 0.75s;
+  transition: 0.5s;
 }
 
 .card_login {
