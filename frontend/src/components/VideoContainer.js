@@ -27,12 +27,12 @@ const VideoContainer = ({ video, play }) => {
       )}
 
       <ReactPlayer
-        url={play&&play.videoUrl}
+        url={play && play.videoUrl}
         controls={true}
         width="100%"
         height="100%"
       />
-      <Card.Body>Camera: {play&&play.camera}</Card.Body>
+      <Card.Body>Camera: {play && play.camera}</Card.Body>
     </Card>
   );
 };

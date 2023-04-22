@@ -30,7 +30,7 @@ export const LoginProvider = ({ children }) => {
     navigate("/");
   };
 
-  const value = { isLoggedIn, login, logout, isError,setIsError };
+  const value = { isLoggedIn, login, logout, isError, setIsError };
   return (
     <LoginContext.Provider value={value}>{children}</LoginContext.Provider>
   );

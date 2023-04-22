@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Container, Col} from "react-bootstrap";
+import { Container, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
-
 
 const OffCanvas = ({ name, videoList, setPlay, ...props }) => {
   const [show, setShow] = useState(false);

@@ -1,6 +1,6 @@
 //External Modules
 import ReactPlayer from "react-player/lazy";
-import { Button, Card, Container, Row, Col,Alert } from "react-bootstrap";
+import { Button, Card, Container, Row, Col, Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import useFetch from "../useFetch";
@@ -11,7 +11,7 @@ const VideosScreen = () => {
 
   return (
     <Container>
-       {isError &&<Alert variant="danger">{isError.message}</Alert> }
+      {isError && <Alert variant="danger">{isError.message}</Alert>}
       {isPending ? (
         <Loader />
       ) : (
