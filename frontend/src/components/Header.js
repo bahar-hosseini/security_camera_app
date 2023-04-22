@@ -9,7 +9,7 @@ const Header = () => {
   const { isLoggedIn, logout } = useLoginContext();
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
+    <Navbar bg="primary" variant="dark" expand="lg" collapseOnSelect>
       <Container>
         <LinkContainer to="/">
           <Navbar.Brand>Bolt and Dash</Navbar.Brand>

@@ -1,6 +1,14 @@
 //External Modules
 import { useState } from "react";
-import { Card, Container, Row, Col, Form, Button } from "react-bootstrap";
+import {
+  Card,
+  Container,
+  Row,
+  Col,
+  Form,
+  Button,
+  Alert,
+} from "react-bootstrap";
 
 //Internal Modules
 import headerImage from "../assets/images/background.jpg";
@@ -10,7 +18,7 @@ const HomeScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { isLoggedIn, login } = useLoginContext();
+  const { isLoggedIn, login, isError } = useLoginContext();
 
   const submitHandler = async (e) => {
     try {
@@ -20,7 +28,7 @@ const HomeScreen = () => {
       console.log(error);
     }
   };
-
+  console.log(isError);
   return (
     <Container
       className="bg_home d-flex align-items-center justify-content-center"
@@ -28,6 +36,15 @@ const HomeScreen = () => {
     >
       {!isLoggedIn && (
         <Card className="p-5 card_login">
+          {isError && (
+            <Alert variant="danger">
+              {isError.response.status === 401 ? (
+                <p>Username and Password Doesn't match </p>
+              ) : (
+                isError.message
+              )}
+            </Alert>
+          )}
           <Form onSubmit={submitHandler}>
             <Row>
               <Col>

@@ -4,7 +4,7 @@ import axios from "axios";
 const usePost = (url) => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
-  const [error, setError] = useState(null);
+  const [isError, setIsError] = useState(null);
 
   async function postData(payload) {
     setIsPending(true);
@@ -12,12 +12,12 @@ const usePost = (url) => {
       const response = await axios.post(url, payload);
       setData(response.data);
     } catch (error) {
-      setError(error);
+      setIsError(error);
     } finally {
       setIsPending(false);
     }
   }
 
-  return { data, isPending, error, postData };
+  return { data, isPending, isError, postData };
 };
 export default usePost;

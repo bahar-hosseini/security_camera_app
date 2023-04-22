@@ -7,7 +7,7 @@ import connectDB from "./config/db.js";
 import User from "./models/userModel.js";
 import users from "./data/users.js";
 import Video from "./models/videosModel.js";
-import videos from './data/videos.js'
+import videos from "./data/videos.js";
 
 dotenv.config();
 connectDB();

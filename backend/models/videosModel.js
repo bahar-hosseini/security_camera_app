@@ -18,9 +18,9 @@ const videoSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    isLive:{
+    isLive: {
       type: Boolean,
-    }
+    },
   },
   {
     timestamps: true,
