@@ -3,11 +3,21 @@ import ReactPlayer from "react-player/lazy";
 import { Button, Card, Container, Row, Col, Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import useFetch from "../useFetch";
+import useFetch from "../customHooks/useFetch";
 import Loader from "../components/Loader";
 
 const VideosScreen = () => {
-  const { data: videos, isPending, isError } = useFetch("/api/videos");
+  const { token } = localStorage.getItem("userInfo")
+    ? JSON.parse(localStorage.getItem("userInfo"))
+    : null;
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const { data: videos, isPending, isError } = useFetch("/api/videos", config);
 
   return (
     <Container>
@@ -35,7 +45,9 @@ const VideosScreen = () => {
                     to={`/videos/room/${video.room}`}
                     className="d-flex d-flex align-items-center justify-content-center text-decoration-none"
                   >
-                    <Button variant="custom">Room {video.room}</Button>
+                    <Button variant="custom" className="px-5">
+                      Room {video.room}
+                    </Button>
                   </Link>
                 </Card>
               );

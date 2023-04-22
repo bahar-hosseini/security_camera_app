@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import useFetch from "../useFetch";
-import { Container } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import useFetch from "../customHooks/useFetch";
+import { Button, Container } from "react-bootstrap";
+import { useParams, useNavigate } from "react-router-dom";
 
 //Internal Modules
 import Loader from "../components/Loader";
@@ -10,6 +10,7 @@ import VideoContainer from "../components/VideoContainer";
 
 const RoomScreen = () => {
   const params = useParams();
+  const navigate = useNavigate();
   const id = params["*"];
 
   const { data: videos, isPending } = useFetch(`/api/videos/room/${id}`);
@@ -26,6 +27,13 @@ const RoomScreen = () => {
   return (
     <Container>
       <Container className="d-flexjustify-content-end m-6">
+        <Button
+          variant="custom"
+          className="mx-4 px-4"
+          onClick={() => navigate(-1)}
+        >
+          Back
+        </Button>
         <OffCanvas
           name="History"
           placement="end"

@@ -3,6 +3,8 @@ import { Container, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
+import DisplayDate from "../components/DisplayDate";
+
 const OffCanvas = ({ name, videoList, setPlay, ...props }) => {
   const [show, setShow] = useState(false);
 
@@ -11,7 +13,7 @@ const OffCanvas = ({ name, videoList, setPlay, ...props }) => {
 
   return (
     <>
-      <Button variant="custom" onClick={toggleShow} className="my-3">
+      <Button variant="custom" onClick={toggleShow} className="my-3 px-5">
         {name}
       </Button>
 
@@ -30,7 +32,11 @@ const OffCanvas = ({ name, videoList, setPlay, ...props }) => {
                   variant="link"
                   onClick={() => setPlay(video)}
                 >
-                  {video.title}
+                  {video.isLive ? (
+                    <h5> Live Video</h5>
+                  ) : (
+                    <DisplayDate dateString={video.createdAt} />
+                  )}
                 </Button>
               </Col>
             ))}

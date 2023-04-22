@@ -3,10 +3,18 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
-import { useLoginContext } from "../providers/LoginProvider";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const { isLoggedIn, logout } = useLoginContext();
+  const navigate = useNavigate();
+  const logout = () => {
+    localStorage.removeItem("userInfo");
+    navigate("/");
+  };
+
+  const userInfoFromStorage = localStorage.getItem("userInfo")
+    ? JSON.parse(localStorage.getItem("userInfo"))
+    : null;
 
   return (
     <Navbar bg="primary" variant="dark" expand="lg" collapseOnSelect>
@@ -17,7 +25,7 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto ">
-            {isLoggedIn && (
+            {userInfoFromStorage && (
               <>
                 <LinkContainer to="/videos">
                   <Nav.Link>Videos</Nav.Link>
@@ -26,7 +34,6 @@ const Header = () => {
                 <Nav.Link onClick={() => logout()}>Logout</Nav.Link>
               </>
             )}
-            {!isLoggedIn && <Nav.Link>Sign In</Nav.Link>}
           </Nav>
         </Navbar.Collapse>
       </Container>

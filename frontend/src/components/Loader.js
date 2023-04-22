@@ -2,20 +2,15 @@ import { Container, Spinner } from "react-bootstrap";
 
 const Loader = () => {
   return (
-    <Container className="d-flex align-items-center justify-content-center">
+    <Container className="d-flex align-items-center justify-content-center z-index-2">
       <Spinner
+        as="span"
         animation="border"
+        size="sm"
         role="status"
-        variant="warning"
-        style={{
-          width: "100px",
-          height: "100px",
-          margin: "30%",
-          display: "block",
-        }}
-      >
-        <span className="sr-only p-4">Loading . . . </span>
-      </Spinner>
+        aria-hidden="true"
+        variant="light"
+      ></Spinner>
     </Container>
   );
 };

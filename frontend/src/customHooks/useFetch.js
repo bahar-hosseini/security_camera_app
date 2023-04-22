@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const useFetch = (url) => {
+const useFetch = (url, config) => {
   const [data, setData] = useState([]);
   const [isPending, setIsPending] = useState(true);
   const [isError, setIsError] = useState(null);
@@ -10,7 +10,7 @@ const useFetch = (url) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(url);
+        const response = await axios.get(url, config);
         setData(response.data);
       } catch (error) {
         setIsError(error);
@@ -19,7 +19,7 @@ const useFetch = (url) => {
       }
     }
     fetchData();
-  }, [url]);
+  }, [url, config]);
 
   return { data, isPending, isError };
 };
