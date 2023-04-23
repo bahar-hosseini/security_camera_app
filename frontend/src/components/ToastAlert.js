@@ -7,11 +7,17 @@ function ToastAlert({ text }) {
   const toggleShow = () => setShow(!show);
 
   const now = new Date();
-const timeString = now.toLocaleTimeString('en-US', {hour: 'numeric', minute: 'numeric', hour12: true});
+  const timeString = now.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
 
-const dateString = now.toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'});
-
-
+  const dateString = now.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
 
   return (
     <ToastContainer position="top-end" className="p-3">

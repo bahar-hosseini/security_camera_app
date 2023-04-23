@@ -1,7 +1,8 @@
 import React from "react";
 
-import { Card, Image, Row, Col, Form, Container } from "react-bootstrap";
+import { Card, Image, Row, Col, Container } from "react-bootstrap";
 import MotionDetection from "./MotionDetection";
+import SwitchBtn from "../components/SwitchBtn";
 
 const VideoContainer = ({ video, play }) => {
   return (
@@ -31,22 +32,7 @@ const VideoContainer = ({ video, play }) => {
       <Card.Body>Camera: {play && play.camera}</Card.Body>
       <Col>
         <Container>
-          <Form.Group as={Row} className="mb-3">
-            <Col sm={10}>
-              <Form.Check
-                variant="warning"
-                type="switch"
-                id="custom-switch"
-                label="Motion Detection"
-              />
-              <Form.Check
-                variant="warning"
-                type="switch"
-                id="custom-switch"
-                label="Sound Detection"
-              />
-            </Col>
-          </Form.Group>
+          <SwitchBtn />
         </Container>
       </Col>
     </Card>

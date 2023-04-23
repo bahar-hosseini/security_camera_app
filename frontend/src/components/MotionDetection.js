@@ -24,13 +24,13 @@ function MotionDetection({ videoSrc }) {
             lastImageData.current.data,
             imageData.data,
             canvas.width,
-            canvas.height
+            canvas.height,
           );
           if (diff > 0.1) {
             const motionBox = getMotionBox(
               imageData.data,
               canvas.width,
-              canvas.height
+              canvas.height,
             );
             ctx.strokeStyle = "#FF0000";
             ctx.lineWidth = 4;
@@ -38,7 +38,7 @@ function MotionDetection({ videoSrc }) {
               motionBox.x1,
               motionBox.y1,
               motionBox.x2 - motionBox.x1,
-              motionBox.y2 - motionBox.y1
+              motionBox.y2 - motionBox.y1,
             );
             setIsDetected((prev) => prev + 1);
           }
