@@ -1,15 +1,7 @@
 import React from "react";
 
-import {
-  Card,
-  Image,
-  Row,
-  Col,
-  Form,
-  Container,
-} from "react-bootstrap";
+import { Card, Image, Row, Col, Form, Container } from "react-bootstrap";
 import MotionDetection from "./MotionDetection";
-
 
 const VideoContainer = ({ video, play }) => {
   return (
@@ -55,7 +47,6 @@ const VideoContainer = ({ video, play }) => {
               />
             </Col>
           </Form.Group>
-    
         </Container>
       </Col>
     </Card>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useFetch from "../customHooks/useFetch";
-import { Button,  Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
 
 //Internal Modules
