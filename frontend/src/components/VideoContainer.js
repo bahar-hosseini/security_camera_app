@@ -1,6 +1,15 @@
 import React from "react";
 import ReactPlayer from "react-player/lazy";
-import { Card, Image, Row, Col } from "react-bootstrap";
+import {
+  Card,
+  Image,
+  Row,
+  Col,
+  Form,
+  Container,
+} from "react-bootstrap";
+import MotionDetection from "./MotionDetection";
+import ToastAlert from "./ToastAlert";
 
 const VideoContainer = ({ video, play }) => {
   return (
@@ -26,13 +35,29 @@ const VideoContainer = ({ video, play }) => {
         </Card.Title>
       )}
 
-      <ReactPlayer
-        url={play && play.videoUrl}
-        controls={true}
-        width="100%"
-        height="100%"
-      />
+      <MotionDetection videoSrc={play && play.videoUrl} />
       <Card.Body>Camera: {play && play.camera}</Card.Body>
+      <Col>
+        <Container>
+          <Form.Group as={Row} className="mb-3">
+            <Col sm={10}>
+              <Form.Check
+                variant="warning"
+                type="switch"
+                id="custom-switch"
+                label="Motion Detection"
+              />
+              <Form.Check
+                variant="warning"
+                type="switch"
+                id="custom-switch"
+                label="Sound Detection"
+              />
+            </Col>
+          </Form.Group>
+    
+        </Container>
+      </Col>
     </Card>
   );
 };
