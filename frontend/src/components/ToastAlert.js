@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
+import React,{useState} from 'react';
 import Toast from 'react-bootstrap/Toast';
 import ToastContainer from 'react-bootstrap/ToastContainer';
 
 function ToastAlert({text}) {
+  const [show, setShow] = useState(true);
+  const toggleShow = () => setShow(!show);
 
   return (
     <ToastContainer position="top-end" className="p-3">
     <Toast
+    show={show}
     variant='Danger'
     className="d-inline-block m-1"
     bg= 'danger'
+    onClose={toggleShow}
 
   >
     <Toast.Header>

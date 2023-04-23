@@ -1,5 +1,5 @@
 import React from "react";
-import ReactPlayer from "react-player/lazy";
+
 import {
   Card,
   Image,
@@ -9,7 +9,7 @@ import {
   Container,
 } from "react-bootstrap";
 import MotionDetection from "./MotionDetection";
-import ToastAlert from "./ToastAlert";
+
 
 const VideoContainer = ({ video, play }) => {
   return (

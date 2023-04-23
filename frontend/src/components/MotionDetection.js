@@ -6,7 +6,7 @@ function MotionDetection({ videoSrc }) {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const lastImageData = useRef(null);
-  const [isDetected,setIsDetected] =useState(false)
+  const [isDetected,setIsDetected] =useState(0)
 
   useEffect(() => {
     const video = videoRef.current;
@@ -40,8 +40,9 @@ function MotionDetection({ videoSrc }) {
               motionBox.x2 - motionBox.x1,
               motionBox.y2 - motionBox.y1
             );
-            setIsDetected(true)
+            setIsDetected(prev => prev+1)
           }
+        
         }
         lastImageData.current = imageData;
 
@@ -49,6 +50,7 @@ function MotionDetection({ videoSrc }) {
       };
 
       draw();
+      setIsDetected(0)
     });
 
     video.crossOrigin = "anonymous";
@@ -58,7 +60,7 @@ function MotionDetection({ videoSrc }) {
 
   return (
     <Container>
-      {isDetected && <ToastAlert text ='Motion Detected' />}
+      {isDetected > 1 && <ToastAlert text ={`Motion Detected ${isDetected}`} />}
           
     <div className="d-flex align-items-center justify-content-center">
   

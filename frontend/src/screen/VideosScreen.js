@@ -1,5 +1,5 @@
 //External Modules
-import ReactPlayer from "react-player/lazy";
+
 import { Button, Card, Container, Row, Col, Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
@@ -34,9 +34,9 @@ const VideosScreen = () => {
                   style={{ width: "33vw", height: "auto" }}
                   key={video._id}
                 >
-                  <ReactPlayer
-                    url={video.videoUrl}
-                    controls={true}
+                  <video
+                    src={video.videoUrl}
+                    // controls={true}
                     width="100%"
                     height="100%"
                   />
@@ -45,7 +45,7 @@ const VideosScreen = () => {
                     to={`/videos/room/${video.room}`}
                     className="d-flex d-flex align-items-center justify-content-center text-decoration-none"
                   >
-                    <Button variant="custom" className="px-5">
+                    <Button variant="custom" className="px-5 mt-2">
                       Room {video.room}
                     </Button>
                   </Link>
