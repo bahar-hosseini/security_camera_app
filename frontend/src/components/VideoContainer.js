@@ -1,6 +1,8 @@
 import React from "react";
-import ReactPlayer from "react-player/lazy";
-import { Card, Image, Row, Col } from "react-bootstrap";
+
+import { Card, Image, Row, Col, Container } from "react-bootstrap";
+import MotionDetection from "./MotionDetection";
+import SwitchBtn from "../components/SwitchBtn";
 
 const VideoContainer = ({ video, play }) => {
   return (
@@ -26,13 +28,13 @@ const VideoContainer = ({ video, play }) => {
         </Card.Title>
       )}
 
-      <ReactPlayer
-        url={play && play.videoUrl}
-        controls={true}
-        width="100%"
-        height="100%"
-      />
+      <MotionDetection videoSrc={play && play.videoUrl} />
       <Card.Body>Camera: {play && play.camera}</Card.Body>
+      <Col>
+        <Container>
+          <SwitchBtn />
+        </Container>
+      </Col>
     </Card>
   );
 };
