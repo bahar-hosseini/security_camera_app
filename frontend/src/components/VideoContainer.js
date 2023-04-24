@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Card, Image, Row, Col, Container } from "react-bootstrap";
 import MotionDetection from "./MotionDetection";
 import SwitchBtn from "../components/SwitchBtn";
 
-const VideoContainer = ({ video, play }) => {
+import FaceDetectionWeb from "./FaceDetectionWeb";
+import SoundDetection from "./SoundDetection";
+
+const VideoContainer = ({ play, isPending }) => {
+  const [motionOn, setMotionOn] = useState(false);
+  const [webFace, setWebFace] = useState(false);
+  const [player, setPlayer] = useState(true);
+  const [soundDetect, setSoundDetect] = useState(false);
+
+  const handlePlayer = () => {
+    setPlayer((p) => !p);
+  };
+  const handleMotion = () => {
+    setMotionOn((m) => !m);
+  };
+
+  const handleWebFace = () => {
+    setWebFace((w) => !w);
+  };
+
+  const handleSDetect = () => {
+    setSoundDetect((s) => !s);
+  };
+
   return (
     <Card className="my-2 py-3" style={{ width: "60vw", height: "auto" }}>
       {play && play.isLive ? (
@@ -27,12 +50,26 @@ const VideoContainer = ({ video, play }) => {
           </Row>
         </Card.Title>
       )}
-
-      <MotionDetection videoSrc={play && play.videoUrl} />
+      {player && <video src={play?.videoUrl} autoPlay={true} />}
+      {motionOn && (
+        <MotionDetection videoSrc={play?.videoUrl} isPending={isPending} />
+      )}
+      {soundDetect && <SoundDetection url={play?.videoUrl} />}
+      {webFace && <FaceDetectionWeb />}
       <Card.Body>Camera: {play && play.camera}</Card.Body>
       <Col>
         <Container>
-          <SwitchBtn />
+          <SwitchBtn
+            motionOn={motionOn}
+            player={player}
+            webFace={webFace}
+            setSoundDetect={soundDetect}
+            soundDetect={soundDetect}
+            handlePlayer={handlePlayer}
+            handleMotion={handleMotion}
+            handleWebFace={handleWebFace}
+            handleSDetect={handleSDetect}
+          />
         </Container>
       </Col>
     </Card>
