@@ -3,7 +3,6 @@ import useFetch from "../customHooks/useFetch";
 import { Button, Container } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
 
-//Internal Modules
 import Loader from "../components/Loader";
 import OffCanvas from "../components/OffCanvasBST";
 import VideoContainer from "../components/VideoContainer";
@@ -15,43 +14,52 @@ const RoomScreen = () => {
 
   const { data: videos, isPending } = useFetch(`/api/videos/room/${id}`);
 
-  const [play, setPlay] = useState();
+  const liveVideo = videos?.find((video) => video && video.isLive);
 
-  const liveVideo = videos.find((video) => video && video.isLive);
+  const [play, setPlay] = useState(liveVideo);
+
   useEffect(() => {
-    if (videos && liveVideo) {
-      setPlay(liveVideo);
+    if (liveVideo) {
+      setPlay(videos[0]);
     }
   }, [videos, liveVideo]);
 
   return (
     <Container>
-      <Container className="d-flexjustify-content-end m-6">
-        <Button
-          variant="custom"
-          className="mx-4 px-4"
-          onClick={() => navigate(-1)}
-        >
-          Back
-        </Button>
-        <OffCanvas
-          name="History"
-          placement="end"
-          videoList={videos}
-          setPlay={setPlay}
-        />
-      </Container>
-      <Container className=" d-flex align-items-center justify-content-center">
-        {isPending ? (
-          <Loader />
-        ) : (
-          <>
-            <Container>
-              <VideoContainer setPlay={setPlay} play={play} />
-            </Container>
-          </>
-        )}
-      </Container>
+      {isPending ? (
+        <Loader />
+      ) : (
+        <>
+          <Container className="d-flexjustify-content-end m-6">
+            <Button
+              variant="custom"
+              className="mx-4 px-4"
+              onClick={() => navigate(-1)}
+            >
+              Back
+            </Button>
+            <OffCanvas
+              name="History"
+              placement="end"
+              videoList={videos}
+              setPlay={setPlay}
+            />
+          </Container>
+          <Container className=" d-flex align-items-center justify-content-center">
+            <>
+              <Container>
+                {play && (
+                  <VideoContainer
+                    setPlay={setPlay}
+                    play={play}
+                    isPending={isPending}
+                  />
+                )}
+              </Container>
+            </>
+          </Container>
+        </>
+      )}
     </Container>
   );
 };

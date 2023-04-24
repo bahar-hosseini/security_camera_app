@@ -1,5 +1,3 @@
-//External Modules
-
 import { Button, Card, Container, Row, Col, Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
@@ -34,18 +32,13 @@ const VideosScreen = () => {
                   style={{ width: "33vw", height: "auto" }}
                   key={video._id}
                 >
-                  <video
-                    src={video.videoUrl}
-                    // controls={true}
-                    width="100%"
-                    height="100%"
-                  />
+                  <video src={video.videoUrl} width="100%" height="100%" />
 
                   <Link
                     to={`/videos/room/${video.room}`}
                     className="d-flex d-flex align-items-center justify-content-center text-decoration-none"
                   >
-                    <Button variant="custom" className="px-5 mt-2">
+                    <Button variant="custom" className=" mt-2">
                       Room {video.room}
                     </Button>
                   </Link>

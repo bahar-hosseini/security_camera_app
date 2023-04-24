@@ -19,7 +19,7 @@ const useFetch = (url, config) => {
       }
     }
     fetchData();
-  }, [url, config]);
+  }, [url]);
 
   return { data, isPending, isError };
 };
