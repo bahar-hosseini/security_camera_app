@@ -1,8 +1,6 @@
-//External Modules
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
-//Internal Modules
 import connectDB from "./config/db.js";
 import User from "./models/userModel.js";
 import users from "./data/users.js";

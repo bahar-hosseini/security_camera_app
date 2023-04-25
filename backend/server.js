@@ -1,10 +1,8 @@
-//External Modules
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 dotenv.config();
 
-//Internal Modules
 import userRoutes from "./routes/userRouter.js";
 import videoRoutes from "./routes/videoRouter.js";
 import { protect } from "./middleware/authMiddleware.js";

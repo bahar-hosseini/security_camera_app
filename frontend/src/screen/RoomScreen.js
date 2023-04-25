@@ -35,6 +35,7 @@ const RoomScreen = () => {
               variant="custom"
               className="mx-4 px-4"
               onClick={() => navigate(-1)}
+              aria-label="back"
             >
               Back
             </Button>

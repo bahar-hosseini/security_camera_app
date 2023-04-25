@@ -14,8 +14,8 @@ function MotionDetection({ videoSrc, isPending }) {
     video.crossOrigin = "anonymous";
     const canvas = canvasRef.current;
     canvas.crossOrigin = "anonymous";
-    const ctx = canvas.getContext("2d", { willReadFrequently: true });
-    ctx.willReadFrequently = true;
+    const ctx = canvas.getContext("2d");
+    if(ctx) ctx.willReadFrequently = true;
 
     let animationFrameId;
     let isPaused = false;
