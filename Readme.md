@@ -13,6 +13,8 @@ This function can be turned on/off as an option to the operator.
 6. In addition to the above, the application has face detection capability. Similarly, this option can
 also be turned on or off as the operator desires.
 
+The application is designed with a responsive user interface that is optimized for both desktop and mobile devices.
+
 ### Homepage and Login
 ![Login](/docs/login.gif)
 
