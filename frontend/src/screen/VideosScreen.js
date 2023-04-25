@@ -38,7 +38,7 @@ const VideosScreen = () => {
                     to={`/videos/room/${video.room}`}
                     className="d-flex d-flex align-items-center justify-content-center text-decoration-none"
                   >
-                    <Button variant="custom" className=" mt-2">
+                    <Button variant="custom" className=" mt-2"  aria-label={`Room ${video.room}`} >
                       Room {video.room}
                     </Button>
                   </Link>

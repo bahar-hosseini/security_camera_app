@@ -1,3 +1,13 @@
+/**
+VideoContainer component is used to display video, camera name and the options to detect motion,
+face and sound with the help of SwitchBtn component.
+@param {object} play - An object containing videoUrl and camera number.
+@param {boolean} isPending - A boolean to indicate whether the video is still loading.
+@param {boolean} play.isLive - A boolean to indicate whether the video is live or recorded.
+@param {boolean} play.videoUrl - A string representing the URL of the video.
+@returns {JSX.Element} JSX.Element representing the VideoContainer component.
+*/
+
 import React, { useState } from "react";
 
 import { Card, Image, Row, Col, Container } from "react-bootstrap";
@@ -12,6 +22,7 @@ const VideoContainer = ({ play, isPending }) => {
   const [webFace, setWebFace] = useState(false);
   const [player, setPlayer] = useState(true);
   const [soundDetect, setSoundDetect] = useState(false);
+
 
   const handlePlayer = () => {
     setPlayer((p) => !p);

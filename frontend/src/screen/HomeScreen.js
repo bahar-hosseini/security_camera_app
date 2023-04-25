@@ -75,7 +75,7 @@ const HomeScreen = () => {
                     </Form.Group>
                   </Row>
                   <Row className="d-flex justify-content-center ">
-                    <Button type="submit" variant="custom" className="w-50">
+                    <Button type="submit" variant="custom" className="w-50" aria-label="Sign In Button">
                       {isPending && <Loader />}
                       Sign In
                     </Button>
