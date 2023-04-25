@@ -14,19 +14,22 @@ This function can be turned on/off as an option to the operator.
 also be turned on or off as the operator desires.
 
 ### Homepage and Login
-<!-- ![](/docs/) -->
+![Login](/docs/login.gif)
 
 ### Live Videos of all Rooms
-<!-- ![](/docs/) -->
+![Rooms](/docs/all-rooms-01.png)
 
-### History and Live Videos of Each Room
-<!-- ![](/docs/) -->
+### History and Live
+![Features](/docs/History-live.gif)
+
+### Motion Detection 
+![<Motion](/docs/motion-detection.gif)
 
 ### Sound Detection
-<!-- ![](/docs/) -->
+![Sound](/docs/sound-detection.gif)
 
-### Motion Detection
-<!-- ![](/docs/) -->
+### Face Detection
+<!-- ![Rooms](/docs/) -->
 
 ---
 
@@ -47,11 +50,10 @@ also be turned on or off as the operator desires.
 
 
 ### Getting Started
-1. Run npm i in both frontend and backend folders
+1. Run `npm i` in both frontend and backend folders
 2. Run  `npm run dev` in root directory of the project
 
 ### Seed Database
-
 
 #### Import data:
 ```
@@ -62,4 +64,9 @@ npm run data:import
 ```
 npm run data:destroy
 ```
+
+For optimal performance, it is recommended that you turn off each switch before switching on the other.
+
+The camera in Room 1 recorded sound.
+
 

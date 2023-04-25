@@ -1,12 +1,10 @@
-//External Modules
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Container } from "react-bootstrap";
 
-//Internal Modules
+
 import Header from "./components/Header";
 import HomeScreen from "./screen/HomeScreen";
-
 import VideosScreen from "./screen/VideosScreen";
 import RoomScreen from "./screen/RoomScreen";
 import Loader from "./components/Loader";
