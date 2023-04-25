@@ -49,6 +49,7 @@ function SoundDetection({ url }) {
   return (
     <Container>
       <video
+      data-testid='video-test'
         id="sound-style"
         ref={videoRef}
         src={url}
@@ -59,8 +60,8 @@ function SoundDetection({ url }) {
         onTimeUpdate={handleProgress}
         crossOrigin="anonymous"
       />
-      {hasSound && <ToastAlert text="Sound Detected" />}
-      {!hasSound && isPlaying && <p>Detecting sound...</p>}
+      {hasSound && <ToastAlert data-testid="toast-alert" text="Sound Detected"  />}
+      {!hasSound && isPlaying && <p >Detecting sound...</p>}
     </Container>
   );
 }

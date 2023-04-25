@@ -15,7 +15,7 @@ const App = () => {
   return (
     <Router>
       <Header />
-      <main>
+      <main aria-hidden="true">
         <Container className="p-0" fluid>
           <Routes>
             <Route path="/videos" element={<VideosScreen />} />

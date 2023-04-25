@@ -66,6 +66,7 @@ const FaceDetectionWeb = () => {
         <Col>
           <Webcam
             id="web-style-video"
+            data-testid ="web-test-video"
             ref={webcamRef}
             style={{
               position: "absolute",
@@ -81,6 +82,7 @@ const FaceDetectionWeb = () => {
           />
           <canvas
             id="web-style-canvas"
+            data-testid ="web-test-canvas"
             ref={canvasRef}
             style={{
               position: "absolute",
