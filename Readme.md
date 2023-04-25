@@ -72,3 +72,12 @@ For optimal performance, it is recommended that you turn off each switch before 
 The video in Room 1 has sound for checking the sound detection feature.
 
 
+---
+### Future Steps:
+1.	Using OpenCV library for motion detection
+2.	Extending the face detection mode to history videos
+3.	Expanding test coverage by writing more test cases that cover a wider range of code.
+4.	Integrating more TensorFlow models in the application
+
+
+
