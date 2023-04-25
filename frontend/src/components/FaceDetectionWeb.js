@@ -62,8 +62,8 @@ const FaceDetectionWeb = () => {
     <
       // className="d-flex align-content-start align-items-start justify-content-end"
     >
-      <Row>
-        <Col>
+      <Row >
+        <Col style={{width:'100%',marginBottom:'40px',padding:'50px'}}>
           <Webcam
             id="web-style-video"
             data-testid ="web-test-video"
@@ -72,12 +72,13 @@ const FaceDetectionWeb = () => {
               position: "absolute",
               margin: "auto",
               // top: 40,
-              left: 0,
-              right: 10,
+              left: 100,
+              // right: 10,
               textAlign: "center",
               zIndex: 9,
-              height: 480,
-              width: 640,
+              height: 580,
+              width: 740,
+              bottom:65,
             }}
           />
           <canvas
@@ -88,13 +89,15 @@ const FaceDetectionWeb = () => {
               position: "absolute",
               margin: "auto",
               // top: 40,
-              left: 0,
-              right: 10,
+              bottom:65,
+              left: 100,
+              // right: 10,
 
               textAlign: "center",
               zIndex: 9,
-              height: 480,
-              width: 640,
+              height: 580,
+              width: 740,
+            
             }}
           />
         </Col>

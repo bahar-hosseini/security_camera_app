@@ -29,7 +29,7 @@ also be turned on or off as the operator desires.
 ![Sound](/docs/sound-detection.gif)
 
 ### Face Detection
-<!-- ![Rooms](/docs/) -->
+![Face-Detection](/docs/face-detection.jpg)
 
 ---
 
@@ -65,8 +65,8 @@ npm run data:import
 npm run data:destroy
 ```
 
-For optimal performance, it is recommended that you turn off each switch before switching on the other.
+For optimal performance, it is recommended that you turn off each switch before switching on another one.
 
-The camera in Room 1 recorded sound.
+The video in Room 1 has sound for checking the sound detection feature.
 
 
