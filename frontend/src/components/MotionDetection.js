@@ -8,13 +8,14 @@ function MotionDetection({ videoSrc, isPending }) {
   const canvasRef = useRef(null);
   const lastImageData = useRef(null);
   const [isDetected, setIsDetected] = useState(0);
-
+    
   useEffect(() => {
     const video = videoRef.current;
     video.crossOrigin = "anonymous";
+    console.log(video,'teeeest');
     const canvas = canvasRef.current;
-    canvas.crossOrigin = "anonymous";
-    const ctx = canvas.getContext("2d");
+
+    const ctx = canvas.getContext("2d")
     if(ctx) ctx.willReadFrequently = true;
 
     let animationFrameId;
@@ -29,7 +30,6 @@ function MotionDetection({ videoSrc, isPending }) {
           ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
           const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
           if (lastImageData.current) {
             const diff = await pixelMatch(
               lastImageData.current.data,
@@ -79,6 +79,9 @@ function MotionDetection({ videoSrc, isPending }) {
 
     video.addEventListener("loadeddata", onLoadedData);
 
+
+    video.crossOrigin = "anonymous"
+canvas.crossOrigin = "anonymous"
     // video.crossOrigin = "*";
     video.src = videoSrc;
   }, [videoSrc]);
