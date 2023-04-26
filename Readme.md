@@ -57,6 +57,7 @@ The application is designed with a responsive user interface that is optimized f
 3. Run  `npm run dev` in root directory of the project
 4. Running Jest Test  `npm test`
 
+
 ### Seed Database
 
 #### Import data:
@@ -75,6 +76,7 @@ For optimal performance, it is recommended that you turn off each switch before 
 
 The video in Room 1 has sound for checking the sound detection feature.
 
+#### If you are experiencing issues accessing motion detection or sound detection features, it might be needed to disable the same origin policy in your browser. [disable same origin policy in your browser ](https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome)
 
 ---
 ### Future Steps:
