@@ -53,7 +53,9 @@ The application is designed with a responsive user interface that is optimized f
 
 ### Getting Started
 1. Run `npm i` in both frontend and backend folders
-2. Run  `npm run dev` in root directory of the project
+2. Create .env file based on .env.example
+3. Run  `npm run dev` in root directory of the project
+4. Running Jest Test  `npm test`
 
 ### Seed Database
 
@@ -66,6 +68,8 @@ npm run data:import
 ```
 npm run data:destroy
 ```
+
+### Test 
 
 For optimal performance, it is recommended that you turn off each switch before switching on another one.
 
