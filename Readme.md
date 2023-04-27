@@ -31,7 +31,7 @@ The application is designed with a responsive user interface that is optimized f
 ![Sound](/docs/sound-detection.gif)
 
 ### Face Detection
-![Face-Detection](/docs/face-detection.jpg)
+![Face-Detection](/docs/face-detection.gif)
 
 ---
 
