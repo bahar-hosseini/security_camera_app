@@ -1,4 +1,4 @@
-# Bolt and Dash
+# Security Camera
 
 ### Overview
 This is a web application that gives operators a wide range of capabilities to thoroughly manage a
